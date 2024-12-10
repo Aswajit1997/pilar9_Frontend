@@ -1,0 +1,151 @@
+.Dashboard {
+	width: 100%;
+
+	.gridItem {
+		width: 100%;
+		background: var(--c2);
+		border: 1px solid var(--c7);
+		border-radius: 8px;
+		padding: 1rem;
+		overflow: hidden;
+		position: relative;
+		scrollbar-width: thin;
+		overflow-y: scroll;
+		padding-top: 0;
+
+		display: flex;
+		flex-direction: column;
+		// position: relative;
+
+		&::-webkit-scrollbar {
+			width: 0.2rem;
+		}
+		&::-webkit-scrollbar-thumb {
+			border-radius: 1rem;
+			background: var(--c8);
+		}
+
+		.Top {
+			padding: 0.7rem;
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			border-bottom: 1px solid rgba(49, 51, 51, 0.151);
+		}
+
+		.ActionButtons {
+			display: flex;
+			align-items: center;
+			gap: 1rem;
+
+			span {
+				cursor: pointer;
+			}
+
+			.Menu {
+				position: relative;
+				z-index: 100;
+
+				.Submenu {
+					position: absolute;
+					right: 40%;
+					top: 110%;
+					display: flex;
+					width: auto;
+					height: auto;
+
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					flex-shrink: 0;
+					box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.08);
+
+					transform: scaleY(0);
+					transition: all ease-in-out 0.3s;
+					transform-origin: top;
+
+					&.Open {
+						transform: scaleY(1);
+					}
+
+					p {
+						width: 100%;
+						border-radius: 0.46856rem 0.46856rem 0rem 0rem;
+						padding: 0.3rem 1.04969rem;
+
+						color: var(--1253, #4d4e50);
+						font-feature-settings: "liga" off, "clig" off;
+						text-shadow: 0px 0px 17.409px #fff;
+						font-family: Poppins;
+						font-size: 0.975rem;
+						font-style: normal;
+						font-weight: 400;
+						line-height: 1.36006rem; /* 181.342% */
+
+						border-bottom: 0.75px solid var(--Rectangle-39866, #edf1f3);
+						background: #fff;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						gap: 0.2rem;
+					}
+				}
+			}
+
+			// .Actions {
+			// 	// position: relative;
+
+			// 	.Menu {
+			// 		position: absolute;
+			// 		top: 115%;
+			// 		width: 10rem;
+
+			// 		display: flex;
+			// 		flex-direction: column;
+			// 		background: var(--c2);
+
+			// 		box-shadow: 0px 2px 7px 5px rgba(226, 217, 217, 0.562);
+			// 		// padding: 0.2rem;
+			// 		left: 0;
+			// 		border-radius: 0.4rem;
+
+			// 		opacity: 0;
+			// 		transform: scale(0);
+			// 		transition: all ease-in-out 0.3s;
+			// 		transform-origin: top;
+
+			// 		&.Open {
+			// 			opacity: 1;
+			// 			transform: scale(1);
+			// 		}
+
+			// 		p {
+			// 			padding: 0.5rem 0.9rem;
+			// 			border-bottom: 1px solid #b6abab80;
+			// 			cursor: pointer;
+
+			// 			&:last-child {
+			// 				border: none;
+			// 			}
+			// 		}
+			// 	}
+			// }
+		}
+
+		.Content {
+			flex: 1;
+			background-color: rgba(63, 61, 61, 0.055);
+			transition: all ease-in-out 0.3s;
+			transform-origin: top;
+
+			img {
+				width: 100%;
+				height: 100%;
+			}
+
+			&.Collapse {
+				transform: scaleY(0);
+			}
+		}
+	}
+}
